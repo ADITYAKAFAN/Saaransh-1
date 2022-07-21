@@ -29,7 +29,7 @@ jobs:
          run: |
            git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@${{ secrets.BOT_REPO }} hero
        - name: running hero server
-         timeout-minutes: 359
+         timeout-minutes: 360
          continue-on-error: true
          run: |
            sudo sh action.sh
