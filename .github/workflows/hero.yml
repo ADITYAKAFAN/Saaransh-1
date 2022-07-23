@@ -25,11 +25,12 @@ jobs:
            git config --global credential.helper store
            echo "https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@github.com" > ~/.git-credentials
        - name: cloning repo
+         timeout-minutes: 1
          continue-on-error: true
          run: |
            git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@${{ secrets.BOT_REPO }} hero
        - name: running hero server
-         timeout-minutes: 359
+         timeout-minutes: 358
          continue-on-error: true
          run: |
            sudo sh action.sh
